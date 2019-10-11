@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="localTracks">
+    <div style="width: 480px" *ngFor="let track of localTracks">
+      <ion-label>{{ track.getId() }} {{ track.getType() }}</ion-label>
+    </div>
+  </div>
+  <div *ngIf="!connection">
+    <ion-button (click)="connect()">
+      <ion-label>Connect</ion-label>
+    </ion-button>
+  </div>
+  <div *ngIf="conferenceState && conferenceState.conference">
+    <ion-button (click)="disconnect()">
+      <ion-label>Disconnect</ion-label>
+    </ion-button>
+  </div>
+
+  <span>
+    <video style="width: 250px" #localVideo autoplay="1"></video>
+  </span>
+  <ng-container *ngIf="conferenceState && conferenceState.conference">
+    <span *ngFor="let participant of conferenceState.participants">
+      <app-participant [conferenceState]="conferenceState" [participant]="participant">
+      </app-participant>
+    </span>
+  </ng-container>
+</ion-content>

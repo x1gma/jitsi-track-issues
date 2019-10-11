@@ -1,0 +1,5 @@
+<span style="border: 1px solid black">
+  <span>{{ participant.id }}</span>
+  <video [hidden]="!hasVideo()" style="width: 250px; border: 1px solid red" #video autoplay="1" controls="true"></video>
+  <audio #audio autoplay="1"></audio>
+</span>
