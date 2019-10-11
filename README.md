@@ -1,7 +1,8 @@
 # jitsi-track-issues
 
 Test application demonstrating the issues described in https://community.jitsi.org/t/video-tracks-not-being-received-send/20177
-Environment: The configuration uses the default Google STUN servers and the beta.meet.jit.si API.
+
+Environment: The configuration uses the default Google STUN servers and the beta.meet.jit.si API. The conference room name is hardcoded in the jitsi.service.ts.
 
 ## Steps to reproduce
 
@@ -17,6 +18,7 @@ Both issues may appear only after disconnecting and reconnecting multiple times.
 
 ## Local environment
 
+```
 > ionic info
 
 Ionic:
@@ -33,3 +35,4 @@ System:
    NodeJS : v10.14.1 (C:\Program Files\nodejs\node.exe)
    npm    : 6.4.1
    OS     : Windows 10
+```
